@@ -66,8 +66,10 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
-    libhwbinder
-    PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+    libhwbinder \
+    libhidltransport.vendor \
+    libhwbinder.vendor
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
