@@ -17,9 +17,11 @@
 # Everything in this directory will become public
 
 PRODUCT_ENABLE_UFFD_GC := false
-# PRODUCT_USE_DYNAMIC_PARTITIONS := true
-# PRODUCT_BUILD_SUPER_PARTITION := true
-PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_SUPER_PARTITION := true
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+PRODUCT_COMPRESSED_APEX := false
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS:= false
 
 # APEX
 PRODUCT_COPY_FILES += \
@@ -255,17 +257,15 @@ PRODUCT_PACKAGES += \
 #RODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc.0/f9824900.sdhci/by-name/system
 
 # VNDK
-# Some hax for VNDK and TREBLE to allow legacy blobs to work
+# Some hax for VNDK and TREBLE to allow legacy blobs to work this goes on proprietary files.... its a old platform after all
 PRODUCT_COPY_FILES += \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm/vndk-core/libui.so:$(TARGET_COPY_OUT_VENDOR)/lib/libui.so \
-    device/huawei/msm8994-common/vndk-v32-prebuild/arm/vndk-core/libbinder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbinder.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm/vndk-core/android.hardware.graphics.allocator@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.graphics.allocator@2.0.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm/vndk-core/android.hardware.graphics.allocator@3.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.graphics.allocator@3.0.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm/vndk-core/android.hardware.graphics.allocator@4.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.graphics.allocator@4.0.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm/vndk-core/libhardware_legacy.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhardware_legacy.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm64/vndk-core/libui.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libui.so \
-    device/huawei/msm8994-common/vndk-v32-prebuild/arm64/vndk-core/libbinder.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbinder.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm64/vndk-core/android.hardware.graphics.allocator@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.graphics.allocator@2.0.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm64/vndk-core/android.hardware.graphics.allocator@3.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.graphics.allocator@3.0.so \
     device/huawei/msm8994-common/vndk-v32-prebuild/arm64/vndk-core/android.hardware.graphics.allocator@4.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.graphics.allocator@4.0.so \
