@@ -150,7 +150,6 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 TARGET_USES_INTERACTION_BOOST := true
-TARGET_RECOVERY_UI_LIB := librecovery_ui_nanohub
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/huawei/msm8994-common
