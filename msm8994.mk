@@ -212,7 +212,7 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-   libaudioclient_shim \
+   libaudioclient_shim.msm8994 \
    librmnetctl
 
 # Seccomp
@@ -223,6 +223,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/msm8994-common/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
+# Shims
+PRODUCT_PACKAGES += \
+    libgui_shim
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 23
